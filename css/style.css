@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 20px; /* Add some gap from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    background-color: #ffffff;
+    border-radius: 30px;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-color: black;
+    border: 1px solid black; 
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    color: #333;
+    font-weight: bold;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar a.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.imgs {
+    padding-top: 80px; /* Add some gap from the top for the navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the height to 80% of the screen */
+    width: 100vw; /* Set the width to 80% of the screen */
+    margin: 0 auto; /* Center the container horizontally */
+    position: relative;
+}
+
+.event-gallery {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 50px;
+}
+
+.event-gallery.active {
+    display: grid;
+}
+
+.event-gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.6s ease;
+}
+
+.event-gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Add media queries for responsiveness */
+
+/* For screens smaller than 768px (tablets and mobiles) */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        width: 90vw;
+        padding: 10px;
+    }
+    .navbar a {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+    .imgs {
+        
+        width: 90vw;
+    }
+    .event-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For screens smaller than 480px (mobiles) */
+@media only screen and (max-width: 480px) {
+    .navbar {
+        width: 100vw;
+        padding: 5px;
+    }
+    .navbar a {
+        font-size: 0.8rem;
+        padding: 3px 5px;
+    }
+    .imgs {
+        
+        width: 100vw;
+    }
+    .event-gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
